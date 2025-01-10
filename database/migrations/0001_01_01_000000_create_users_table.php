@@ -15,8 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('gender', ['Male', 'Female']);
+            $table->string('hobbies');
+            $table->string('ig_username');
+            $table->string('mobile_number');
+            $table->string('picture')->nullable();
+            $table->boolean('visibility')->default(true);
+            $table->integer('coin_balance')->default(100);
+            $table->decimal('registration_fee', 10, 2)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
